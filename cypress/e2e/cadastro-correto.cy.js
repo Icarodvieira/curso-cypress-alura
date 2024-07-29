@@ -1,12 +1,12 @@
 describe('Tela de cadastro', () => {
   it('Preencher os campos do formulário corretamente para cadastrar um novo usuário', () => {
     cy.visit('https://adopet-frontend-cypress.vercel.app/');
-    cy.contains('a','Cadastrar').click();
-    cy.get('input[name="nome"]').type('Ana de Jesus');
-    cy.get('input[name="email"]').type("novoteste@email.com");
-    cy.get('input[name="password"]').type("Senha123");
-    cy.get('input[name = "confirm_password"]').type("Senha123");
-    cy.contains('button','Cadastrar').click();
+    cy.get('[data-test= "register-button"]').click();
+    cy.get('[data-test= "input-name"]').type('Ana de Jesus');
+    cy.get('[data-test= "input-email"]').type("novoteste@email.com");
+    cy.get('[data-test= "input-password"]').type("Senha123");
+    cy.get('[data-test= "input-confirm-password"]').type("Senha123");
+    cy.get('[data-test= "submit-button"]').click();
   })
 })
 
@@ -40,8 +40,8 @@ describe('Acessar página /home', ()=>{
   })
 })
 
-describe('Acessar home e clicar em botão de responsável', ()=>{
-  it('Visitar página /home e clicar em botão de resposável', ()=>{
+describe('Acessar home e clicar em botão de mensagem', ()=>{
+  it('Visitar página /home e clicar em botão message', ()=>{
     cy.visit('https://adopet-frontend-cypress.vercel.app/home');
     cy.get('.header__message').click();
   })
