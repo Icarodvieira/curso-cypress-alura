@@ -4,7 +4,7 @@ describe('Página de login', () => {
         cy.get('[data-test="login-button"]').click();
     })
 
-    it('Deve preencher os campos do login incorretamente e não autenticar o usuário na página', () => {
+    it('Deve preencher os campos do login incorretamente, não autenticar o usuário na página e exibir mensagem de erro', () => {
       cy.get('[data-test="input-loginEmail"]').type('ana');
       cy.get('[data-test="input-loginPassword"]').type('senha');
       cy.get('[data-test="submit-button"]').click();
