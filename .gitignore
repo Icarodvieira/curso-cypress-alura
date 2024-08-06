@@ -3,6 +3,7 @@ node_modules/
 /logs/
 *.tmp
 
+cypress.env.json
 cypress/videos/
 cypress/results/*.json
 cypress/results/*.html
